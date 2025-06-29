@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AR con Video</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+  <!-- Escena AR.js con detección de imagen -->
+  <a-scene embedded arjs="detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+    <!-- Define el marcador (tu imagen) -->
+    <a-marker type="pattern" url="tu-patron.patt">
+      <!-- Aquí aparece el video cuando se detecta la imagen -->
+      <a-video
+        src="tu-video.mp4"
+        width="1.6" height="0.9"
+        position="0 0.5 0"
+        rotation="-90 0 0"
+        autoplay
+        loop
+      ></a-video>
+    </a-marker>
+    <!-- Cámara -->
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
+</html>
